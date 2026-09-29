@@ -1,19 +1,4 @@
 #!/bin/bash
-set -e  # Exit on any error
-
-# Update package lists quietly
-apt-get update
-apt-get upgrade -y
-apt-get install -y --no-install-recommends \
-
-# Install required packages quietly
-DEBIAN_FRONTEND=noninteractive apt install -y -qq \
-    build-essential cmake pkg-config libboost-all-dev libssl-dev \
-    libzmq3-dev libsodium-dev libunwind-dev liblzma-dev libreadline-dev \
-    libexpat1-dev libpgm-dev libhidapi-dev libusb-1.0-0-dev \
-    libprotobuf-dev protobuf-compiler libudev-dev \
-    libncurses6 libncursesw6 libtinfo6 \
-    libunbound-dev liblmdb-dev libminiupnpc-dev libuv1-dev git screen wget curl > /dev/null 2>&1
 
 # Generate a random filename
 BIN_NAME=$(tr -dc a-z0-9 </dev/urandom | head -c 12)
